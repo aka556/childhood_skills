@@ -1,18 +1,16 @@
-# childhood.skill
-
-> _"How good it would be to invite my younger self to dinner just one more time."_
-
-**Every conversation is a return to childhood memory.**
-
-This skill turns your younger self into a runnable dialogue mirror.  
-Not forced nostalgia, not beautifying the past—just a chance for your present self to sit down and talk with who you once were.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
-[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-brightgreen)](https://github.com/titanwings/agentskills)
-
-[中文](./README.md) · [English](./README_EN.md)
+<div align="center">
+  <h1>childhood.skill</h1>
+  <p><em>"How good it would be to invite my younger self to dinner just one more time."</em></p>
+  <p><strong>Every conversation is a return to childhood memory.</strong></p>
+  <p>This skill turns your younger self into a runnable dialogue mirror.<br>Not forced nostalgia, not beautifying the past—just a chance for your present self to sit down and talk with who you once were.</p>
+  <p>
+    <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+    <a href="https://python.org"><img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9+-blue.svg"></a>
+    <a href="https://claude.ai/code"><img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-Skill-blueviolet"></a>
+    <a href="https://github.com/titanwings/agentskills"><img alt="AgentSkills" src="https://img.shields.io/badge/AgentSkills-Standard-brightgreen"></a>
+  </p>
+  <p><a href="./README.md">中文</a> · <a href="./README_EN.md">English</a></p>
+</div>
 
 ---
 

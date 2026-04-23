@@ -1,18 +1,16 @@
-# 童年.skill
-
-> _"真好，多想宴请一次小时候的自己，告诉他/她：好好的"_
-
-**每一次的对话，都是一次对儿时的追忆。**
-
-把小时候的自己珍藏成一个可对话的 Skill。  
-不是强行怀旧，也不是美化过去，而是给长大后的你一次和当年的自己坐下来聊聊的机会。
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
-[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
-[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-brightgreen)](https://github.com/titanwings/agentskills)
-
-[中文](./README.md) · [English](./README_EN.md)
+<div align="center">
+  <h1>童年.skill</h1>
+  <p><em>"真好，多想宴请一次小时候的自己，告诉他/她：好好的"</em></p>
+  <p><strong>每一次的对话，都是一次对儿时的追忆。</strong></p>
+  <p>把小时候的自己珍藏成一个可对话的 Skill。<br>不是强行怀旧，也不是美化过去，而是给长大后的你一次和当年的自己坐下来聊聊的机会。</p>
+  <p>
+    <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+    <a href="https://python.org"><img alt="Python 3.9+" src="https://img.shields.io/badge/Python-3.9+-blue.svg"></a>
+    <a href="https://claude.ai/code"><img alt="Claude Code" src="https://img.shields.io/badge/Claude%20Code-Skill-blueviolet"></a>
+    <a href="https://github.com/titanwings/agentskills"><img alt="AgentSkills" src="https://img.shields.io/badge/AgentSkills-Standard-brightgreen"></a>
+  </p>
+  <p><a href="./README.md">中文</a> · <a href="./README_EN.md">English</a></p>
+</div>
 
 ---
 
