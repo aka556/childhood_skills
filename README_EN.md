@@ -22,13 +22,13 @@ Run in your git repository root:
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/aka-556/childhood_skills .claude/skills/create-childhood
+git clone https://github.com/aka556/childhood_skills .claude/skills/create-childhood
 ```
 
 Or install globally:
 
 ```bash
-git clone https://github.com/aka-556/childhood_skills ~/.claude/skills/create-childhood
+git clone https://github.com/aka556/childhood_skills ~/.claude/skills/create-childhood
 ```
 
 Install dependencies:
