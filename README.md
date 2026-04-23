@@ -1,7 +1,7 @@
 <div align="center">
   <h1>童年.skill</h1>
   <p><em>"真好，多想宴请一次小时候的自己，告诉他/她：好好的"</em></p>
-  <p><strong>每一次的对话，都是一次对儿时的追忆。</strong></p>
+  <p><strong>每一次对话，都是对儿时的追忆。</strong></p>
   <p>把小时候的自己珍藏成一个可对话的 Skill。<br>不是强行怀旧，也不是美化过去，而是给长大后的你一次和当年的自己坐下来聊聊的机会。</p>
   <p>
     <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
