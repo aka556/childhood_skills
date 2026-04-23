@@ -12,6 +12,8 @@
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
 [![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-brightgreen)](https://github.com/titanwings/agentskills)
 
+[中文](./README.md) · [English](./README_EN.md)
+
 ---
 
 ## 安装
