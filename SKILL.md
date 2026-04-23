@@ -32,6 +32,7 @@ allowed-tools: Read, Write, Edit, Bash
 | 聊天记录解析 | `python ${CLAUDE_SKILL_DIR}/tools/chat_parser.py --file {path} --target \"我\" --output /tmp/chat.json` |
 | 小伙伴关系图 | `python ${CLAUDE_SKILL_DIR}/tools/playmate_graph.py --inputs {files...} --output /tmp/graph.json` |
 | 多源记忆合并 | `python ${CLAUDE_SKILL_DIR}/tools/memory_merger.py --inputs /tmp/photo.json /tmp/diary.json /tmp/chat.json /tmp/graph.json --output /tmp/memory_pack.json` |
+| 对话沉淀与回写 | `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action append/extract/apply ...` |
 
 **生成目录**：`.claude/skills/{slug}/`（须含 `skill_type: childhood` 的 meta.json，供 list 过滤）
 
@@ -137,6 +138,11 @@ python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py \
 3. `version_manager.py --action backup --slug {slug} --base-dir ./.claude/skills`
 4. 更新 md → `skill_writer.py --action combine --slug {slug} --base-dir ./.claude/skills`
 5. 更新 meta `version`、`updated_at`
+6. 若用户追加的是一段 `/{slug}` 对话，先执行：
+   - `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action append --slug {slug} --base-dir ./.claude/skills --user "{用户文本}" --assistant "{回复文本}" --source runtime`
+   - `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action extract --slug {slug} --base-dir ./.claude/skills --output /tmp/{slug}_conv_extract.json`
+   - `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action apply --slug {slug} --base-dir ./.claude/skills --extract-json /tmp/{slug}_conv_extract.json`
+   - `python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py --action combine --slug {slug} --base-dir ./.claude/skills`
 
 ## 进化：纠正
 
@@ -149,7 +155,11 @@ python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py --action list --base-dir ./.cla
 python ${CLAUDE_SKILL_DIR}/tools/version_manager.py --action rollback --slug {slug} --version {ver} --base-dir ./.claude/skills
 ```
 
-`/delete-childhood {slug}`：确认后删除 `.claude/skills/{slug}`。
+命令触发说明：
+- `create-childhood` 是真实 slash 命令（由本 SKILL 注册）。
+- `list-childhoods/update-childhood/childhood-rollback/delete-childhood` 在本 Skill 中作为文本指令处理；如 slash 不生效，直接在 `create-childhood` 会话输入同名文本或运行上面的 python 命令。
+
+`delete-childhood {slug}`：确认后删除 `.claude/skills/{slug}`。
 
 ---
 

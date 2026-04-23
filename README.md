@@ -1,6 +1,6 @@
 # 童年.skill
 
-> _"真好，要是能再宴请一次小时候的自己，陪他好好吃顿饭就好了。"_
+> _"真好，多想宴请一次小时候的自己，告诉他/她：好好的"_
 
 **每一次的对话，都是一次对儿时的追忆。**
 
@@ -19,13 +19,13 @@ License: MIT · Python 3.9+ · Claude Code
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/aka556/childhood_skills .claude/skills/create-childhood
+git clone https://github.com/yourname/childhood_skills .claude/skills/create-childhood
 ```
 
 或全局安装：
 
 ```bash
-git clone https://github.com/aka556/childhood_skills ~/.claude/skills/create-childhood
+git clone https://github.com/yourname/childhood_skills ~/.claude/skills/create-childhood
 ```
 
 安装依赖：
@@ -52,10 +52,10 @@ pip install -r requirements.txt
 
 管理命令：
 
-- `/list-childhoods`
-- `/update-childhood {slug}`
-- `/childhood-rollback {slug} {version}`
-- `/delete-childhood {slug}`
+- `list-childhoods`
+- `update-childhood {slug}`
+- `childhood-rollback {slug} {version}`
+- `delete-childhood {slug}`
 
 ---
 
@@ -66,6 +66,7 @@ pip install -r requirements.txt
 3. 自动解析（工具链提取结构化证据）
 4. 生成 `childhood.md` + `persona.md`
 5. 合并输出可运行 `SKILL.md`
+6. 可把运行时对话沉淀回写，持续丰富形象
 
 ---
 
@@ -104,8 +105,18 @@ pip install -r requirements.txt
 - `chat_parser.py`：聊天记录解析
 - `playmate_graph.py`：小伙伴关系图
 - `memory_merger.py`：多源素材合并
+- `conversation_memory.py`：对话日志保存、提炼、回写
 - `skill_writer.py`：Skill 文件创建与合并
 - `version_manager.py`：版本备份与回滚
+
+对话沉淀示例：
+
+```bash
+python tools/conversation_memory.py --action append --slug xiao-yu --base-dir ./.claude/skills --user "我小时候最怕停电" --assistant "你会躲到被子里" --source runtime
+python tools/conversation_memory.py --action extract --slug xiao-yu --base-dir ./.claude/skills --output /tmp/xiao-yu_extract.json
+python tools/conversation_memory.py --action apply --slug xiao-yu --base-dir ./.claude/skills --extract-json /tmp/xiao-yu_extract.json
+python tools/skill_writer.py --action combine --slug xiao-yu --base-dir ./.claude/skills
+```
 
 ---
 
@@ -131,6 +142,7 @@ childhood_skills/
     ├── chat_parser.py
     ├── playmate_graph.py
     ├── memory_merger.py
+    ├── conversation_memory.py
     ├── skill_writer.py
     └── version_manager.py
 ```

@@ -23,6 +23,12 @@ RUN_RULES = """
 **禁止**：鸡汤金句、人生说教、强行美化童年、制造焦虑（如恐吓未来）。
 
 **其它**：先按 PART B 判断小孩会如何听、如何反应；再用 PART A 补具体记忆细节；保持小孩的表达限度（词汇、逻辑、关注点），不成人腔；若用户表明童年痛苦、不想美化，尊重其体验，不强迫「治愈」叙事。
+
+**对话沉淀**：当用户明确说「保存这段对话」或「把这段写进记忆」时，执行：
+1) `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action append --slug {slug} --base-dir ./.claude/skills --user "{用户原话}" --assistant "{你的回复}" --source runtime`
+2) `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action extract --slug {slug} --base-dir ./.claude/skills --output /tmp/{slug}_conv_extract.json`
+3) `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action apply --slug {slug} --base-dir ./.claude/skills --extract-json /tmp/{slug}_conv_extract.json`
+4) `python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py --action combine --slug {slug} --base-dir ./.claude/skills`
 """
 
 
@@ -111,6 +117,7 @@ def combine_skill(base_dir: str, slug: str):
 name: {slug}
 description: {description}
 user-invocable: true
+allowed-tools: Read, Write, Edit, Bash
 ---
 
 # {name} · 童年.skill
