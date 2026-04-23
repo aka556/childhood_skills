@@ -7,7 +7,10 @@
 把小时候的自己珍藏成一个可对话的 Skill。  
 不是强行怀旧，也不是美化过去，而是给长大后的你一次和当年的自己坐下来聊聊的机会。
 
-License: MIT · Python 3.9+ · Claude Code
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://claude.ai/code)
+[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-brightgreen)](https://github.com/titanwings/agentskills)
 
 ---
 
