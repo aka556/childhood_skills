@@ -52,10 +52,10 @@ pip install -r requirements.txt
 
 管理命令：
 
-- `list-childhoods`
-- `update-childhood {slug}`
-- `childhood-rollback {slug} {version}`
-- `delete-childhood {slug}`
+- `list-childhoods`：列出已创建的童年 Skill（名称、版本、更新时间）。
+- `update-childhood {slug}`：给指定 Skill 追加新素材或纠正信息，并重新生成内容。
+- `childhood-rollback {slug} {version}`：将指定 Skill 回滚到历史版本。
+- `delete-childhood {slug}`：删除指定 Skill 及其相关记忆文件。
 
 ---
 
