@@ -19,13 +19,13 @@ License: MIT · Python 3.9+ · Claude Code
 
 ```bash
 mkdir -p .claude/skills
-git clone https://github.com/yourname/childhood_skills .claude/skills/create-childhood
+git clone https://github.com/aka556/childhood_skills .claude/skills/create-childhood
 ```
 
 或全局安装：
 
 ```bash
-git clone https://github.com/yourname/childhood_skills ~/.claude/skills/create-childhood
+git clone https://github.com/aka556/childhood_skills ~/.claude/skills/create-childhood
 ```
 
 安装依赖：
