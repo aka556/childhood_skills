@@ -60,6 +60,10 @@ Management commands:
 - `childhood-rollback {slug} {version}`: roll back to a historical version
 - `delete-childhood {slug}`: delete a skill and related memory files
 
+> Before using management commands, install them once in `/create-childhood`:  
+> `install management commands`  
+> or run: `python tools/management_skills_installer.py --base-dir ./.claude/skills`
+
 ---
 
 ## Creation Flow
@@ -109,6 +113,8 @@ The `tools/` directory includes:
 - `playmate_graph.py`: playmate relation graph
 - `memory_merger.py`: multi-source memory merge
 - `conversation_memory.py`: save/extract/apply conversation memory
+- `auto_correction.py`: auto-write "not like this" style corrections
+- `management_skills_installer.py`: install `/list-childhoods` and related commands
 - `skill_writer.py`: skill file creation and merge
 - `version_manager.py`: backup and rollback
 

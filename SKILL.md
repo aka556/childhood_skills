@@ -33,6 +33,8 @@ allowed-tools: Read, Write, Edit, Bash
 | 小伙伴关系图 | `python ${CLAUDE_SKILL_DIR}/tools/playmate_graph.py --inputs {files...} --output /tmp/graph.json` |
 | 多源记忆合并 | `python ${CLAUDE_SKILL_DIR}/tools/memory_merger.py --inputs /tmp/photo.json /tmp/diary.json /tmp/chat.json /tmp/graph.json --output /tmp/memory_pack.json` |
 | 对话沉淀与回写 | `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action append/extract/apply ...` |
+| 自动纠正写回 | `python ${CLAUDE_SKILL_DIR}/tools/auto_correction.py --slug {slug} --base-dir ./.claude/skills --text "{用户纠正原话}"` |
+| 管理命令安装 | `python ${CLAUDE_SKILL_DIR}/tools/management_skills_installer.py --base-dir ./.claude/skills` |
 
 **生成目录**：`.claude/skills/{slug}/`（须含 `skill_type: childhood` 的 meta.json，供 list 过滤）
 
@@ -43,6 +45,12 @@ Windows：统一 `python`；乱码可设 `PYTHONIOENCODING=utf-8`。
 ## Step 1：录入
 
 按 `prompts/intake.md` 问 3 问（代号必填），汇总确认。
+
+首次进入时先执行一次（若对应目录不存在）：
+
+```bash
+python ${CLAUDE_SKILL_DIR}/tools/management_skills_installer.py --base-dir ./.claude/skills
+```
 
 ## Step 2：原材料（可多选可跳过）
 
@@ -147,6 +155,12 @@ python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py \
 ## 进化：纠正
 
 按 `prompts/correction_handler.md` 写入 Correction → combine。
+若用户明确表达「不对/不是这样的/我不会这样说」，必须追加执行：
+
+```bash
+python ${CLAUDE_SKILL_DIR}/tools/auto_correction.py --slug {slug} --base-dir ./.claude/skills --text "{用户原话}"
+python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py --action combine --slug {slug} --base-dir ./.claude/skills
+```
 
 ## 管理
 
@@ -157,7 +171,11 @@ python ${CLAUDE_SKILL_DIR}/tools/version_manager.py --action rollback --slug {sl
 
 命令触发说明：
 - `create-childhood` 是真实 slash 命令（由本 SKILL 注册）。
-- `list-childhoods/update-childhood/childhood-rollback/delete-childhood` 在本 Skill 中作为文本指令处理；如 slash 不生效，直接在 `create-childhood` 会话输入同名文本或运行上面的 python 命令。
+- 运行 `management_skills_installer.py` 后，会生成真实 slash 命令：
+  - `/list-childhoods`
+  - `/update-childhood`
+  - `/childhood-rollback`
+  - `/delete-childhood`
 
 `delete-childhood {slug}`：确认后删除 `.claude/skills/{slug}`。
 

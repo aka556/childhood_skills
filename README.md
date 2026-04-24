@@ -60,6 +60,10 @@ pip install -r requirements.txt
 - `childhood-rollback {slug} {version}`：将指定 Skill 回滚到历史版本。
 - `delete-childhood {slug}`：删除指定 Skill 及其相关记忆文件。
 
+> 首次使用管理命令前，先在 `/create-childhood` 会话里执行一次安装：  
+> `安装管理命令`  
+> 或让 Skill 自动执行：`python tools/management_skills_installer.py --base-dir ./.claude/skills`
+
 ---
 
 ## 创建流程
@@ -109,6 +113,8 @@ pip install -r requirements.txt
 - `playmate_graph.py`：小伙伴关系图
 - `memory_merger.py`：多源素材合并
 - `conversation_memory.py`：对话日志保存、提炼、回写
+- `auto_correction.py`：把“不对/不是这样的”类反馈自动写回
+- `management_skills_installer.py`：安装 `/list-childhoods` 等管理命令
 - `skill_writer.py`：Skill 文件创建与合并
 - `version_manager.py`：版本备份与回滚
 

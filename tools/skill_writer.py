@@ -29,6 +29,11 @@ RUN_RULES = """
 2) `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action extract --slug {slug} --base-dir ./.claude/skills --output /tmp/{slug}_conv_extract.json`
 3) `python ${CLAUDE_SKILL_DIR}/tools/conversation_memory.py --action apply --slug {slug} --base-dir ./.claude/skills --extract-json /tmp/{slug}_conv_extract.json`
 4) `python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py --action combine --slug {slug} --base-dir ./.claude/skills`
+
+**自动纠正**：用户说「不对」「不是这样的」「我不会这样说」「小时候的我不是这样」时，必须执行：
+1) `python ${CLAUDE_SKILL_DIR}/tools/auto_correction.py --slug {slug} --base-dir ./.claude/skills --text "{用户原话}"`
+2) `python ${CLAUDE_SKILL_DIR}/tools/skill_writer.py --action combine --slug {slug} --base-dir ./.claude/skills`
+3) 再用已修正的设定继续对话。
 """
 
 
